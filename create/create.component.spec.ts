@@ -1,26 +1,11 @@
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { createComponent } from './create.component';
 
-describe('createComponent', () => {
-  let component: createComponent;
-  let fixture: ComponentFixture<createComponent>;
+import {create} from '@angular/core';
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ createComponent ]
-    })
-    .compileComponents();
-  }));
+@Component({
+  selector: 'app-create-h',
+  template: 'create-h'
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(createComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-});
+}}})
