@@ -7,6 +7,7 @@ import { NavbarComponent } from './componentes/shared/navbar/navbar.component';
 
 import { APP_ROUTING } from './app.routes';
 import { SearchComponent } from './componentes/search/search.component';
+import { MockupRecipeService } from './services/mockup-recipe.service';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,9 @@ import { SearchComponent } from './componentes/search/search.component';
         BrowserModule,
         APP_ROUTING
     ],
-    providers: [],
+    providers: [
+        MockupRecipeService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
