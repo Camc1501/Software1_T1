@@ -9,21 +9,34 @@ import { MockupRecipeService } from '../../services/mockup-recipe.service';
     styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-    private recipe: Recipe;
+    recipe: Recipe;
+    recipes: Recipe[] = [];
 
     constructor(private _mockup: MockupRecipeService) {
-        // this.recipe.nombre = 'Hamburgesa';
-        // this.recipe.tiempo = 10;
-        // this.recipe.preparacion = 'Apilar los ingredientes entre dos capas de pan';
-        // this.recipe.ingredientes.push('Carne');
-        // this.recipe.ingredientes.push('Pan');
-        // this.recipe.ingredientes.push('Lechuga');
-        // console.log(this.recipe);
-        //this._mockup.setRecipe(this.recipe);
+        this.recipe = {
+            nombre: 'Hamburgesa',
+            tiempo: 10,
+            preparacion: 'Apilar los ingredientes entre dos capas de pan',
+            ingredientes: ['Carne', 'Pan', 'Lechuga']
+        }
+        this._mockup.setRecipe(this.recipe);
+        this.recipe = {
+            nombre: 'Ensalada',
+            tiempo: 7,
+            preparacion: 'Mezclar los ingredientes, agrege sal al gusto',
+            ingredientes: ['tomate', 'vinagreta', 'Lechuga', 'sal', 'mazorca']
+        }
+        this._mockup.setRecipe(this.recipe);
+        this.recipe = {
+            nombre: 'Esponjado de Mango',
+            tiempo: 35,
+            preparacion: 'Mezclar los ingredientes, con las claras de los huevos a punto de nieve',
+            ingredientes: ['Mango', 'Leche Condensada', 'Gelatina sin Sabor', 'Huevos', 'limón']
+        }
+        this._mockup.setRecipe(this.recipe);
     }
 
     ngOnInit() {
-        console.log('muestra de recipes:');
-        //        console.log(this._mockup.getRecipes());
+        this.recipes = this._mockup.getRecipes();
     }
 }

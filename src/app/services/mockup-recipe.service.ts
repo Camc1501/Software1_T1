@@ -4,8 +4,8 @@ import { Recipe } from '../interfaces/recipe';
 
 @Injectable()
 export class MockupRecipeService {
-    private recipe: Recipe;
-    private recipes: Recipe[];
+    recipes: Recipe[] = [];
+
     constructor() {
         console.log('recipes service');
         //        this.doRecipe();
