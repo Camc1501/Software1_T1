@@ -1,13 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { RecipeListComponent } from './componentes/recipe-list/recipe-list.component';
-//import { SearchComponent } from './componentes/search/search.component';
-//import { ArtistComponent } from './componentes/artist/artist.component';
+import { SearchComponent } from './componentes/search/search.component';
+import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.component';
 
 const APP_MODULES: Routes = [
     { path: 'home', component: RecipeListComponent },
-    //    { path: 'buscar', component: SearchComponent },
-    //    { path: 'artist/:id', component: ArtistComponent },
+    { path: 'search', component: SearchComponent },
+    { path: 'add', component: AddRecipeComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

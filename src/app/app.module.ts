@@ -9,6 +9,7 @@ import { APP_ROUTING } from './app.routes';
 import { SearchComponent } from './componentes/search/search.component';
 import { MockupRecipeService } from './services/mockup-recipe.service';
 import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.component';
+import { LimitePipe } from './pipes/limite.pipe';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.componen
         RecipeListComponent,
         NavbarComponent,
         SearchComponent,
-        AddRecipeComponent
+        AddRecipeComponent,
+        LimitePipe
     ],
     imports: [
         BrowserModule,
@@ -25,6 +27,7 @@ import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.componen
     providers: [
         MockupRecipeService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    exports: [LimitePipe]
 })
 export class AppModule { }

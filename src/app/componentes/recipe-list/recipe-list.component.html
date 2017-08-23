@@ -1,12 +1,18 @@
 <article *ngFor="let recipe of recipes">
     <div class="card">
 	<div class="card-header">
-	    <h2>{{ recipe.nombre }}</h2>
+	    <div class="row">
+		<div class="col-md-10">
+		    <h3>{{ recipe.nombre }}</h3>
+		</div>
+		<div class="col-md-2">
+		    <span class="card-title"><b>Tiempo: </b>{{ recipe.tiempo }} Min</span>
+		</div>
+	    </div>
 	</div>
 	<div class="card-block">
-	    <h4 class="card-title"><b>Tiempo: </b>{{ recipe.tiempo }} Min</h4>
-	    <p class="card-text">{{ recipe.preparacion }}</p>
-	    <a href="#" class="btn btn-primary">{{ recipe.nombre }}</a>
+	    <p class="card-text">{{ recipe.preparacion | limite: 30 }}</p>
+	    <a href="#" class="btn btn-primary">Ver Preparaci&oacute;n</a>
 	</div>
     </div>
     <br/>
