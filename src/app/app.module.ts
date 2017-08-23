@@ -8,13 +8,15 @@ import { NavbarComponent } from './componentes/shared/navbar/navbar.component';
 import { APP_ROUTING } from './app.routes';
 import { SearchComponent } from './componentes/search/search.component';
 import { MockupRecipeService } from './services/mockup-recipe.service';
+import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         RecipeListComponent,
         NavbarComponent,
-        SearchComponent
+        SearchComponent,
+        AddRecipeComponent
     ],
     imports: [
         BrowserModule,
