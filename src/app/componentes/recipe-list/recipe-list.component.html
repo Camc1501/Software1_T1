@@ -1,4 +1,4 @@
-<article *ngFor="let recipe of recipes">
+<article *ngFor="let recipe of recipes;let i = index">
     <div class="card">
 	<div class="card-header">
 	    <div class="row">
@@ -12,7 +12,7 @@
 	</div>
 	<div class="card-block">
 	    <p class="card-text">{{ recipe.preparacion | limite: 30 }}</p>
-	    <a class="btn btn-primary" (click)="verHeroe(i)">Ver Preparaci&oacute;n</a>
+	    <button class="btn btn-primary" (click)="viewRecipe(i)">Ver Preparaci&oacute;n</button>
 	</div>
     </div>
     <br/>

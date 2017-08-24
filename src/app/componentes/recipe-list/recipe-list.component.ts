@@ -10,11 +10,10 @@ import { MockupRecipeService } from '../../services/mockup-recipe.service';
     styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-    router: Router;
     recipe: Recipe;
     recipes: Recipe[] = [];
 
-    constructor(private _mockup: MockupRecipeService) {
+    constructor(private _mockup: MockupRecipeService, private router: Router) {
         this.recipes = this._mockup.getRecipes();
         if (this.recipes.length < 1) {
             this.recipe = {
@@ -45,7 +44,7 @@ export class RecipeListComponent implements OnInit {
 
     }
 
-    viewRecipe() {
-        this.router.navigate(['/view']);
+    viewRecipe(i: number) {
+        this.router.navigate(['/view', i]);
     }
 }
