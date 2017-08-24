@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Recipe } from '../../interfaces/recipe';
 import { MockupRecipeService } from '../../services/mockup-recipe.service';
@@ -9,6 +10,7 @@ import { MockupRecipeService } from '../../services/mockup-recipe.service';
     styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+    router: Router;
     recipe: Recipe;
     recipes: Recipe[] = [];
 
@@ -41,5 +43,9 @@ export class RecipeListComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    viewRecipe() {
+        this.router.navigate(['/view']);
     }
 }
