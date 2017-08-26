@@ -20,13 +20,15 @@ export class MockupRecipeService {
         return this.recipes;
     }
 
-    getRecipe(match: String): Recipe {
-        match = match.toLocaleLowerCase();
-        for (let recipe of this.recipes) {
-            if (match == recipe.nombre.toLocaleLowerCase()) {
-                return recipe;
-            }
-        }
+    getRecipe(match: number): Recipe {
+        let recipe: Recipe;
+        return recipe = this.recipes[match];
+                // match = match.toLocaleLowerCase();
+                // for (let recipe of this.recipes) {
+                //     if (match == recipe.nombre.toLocaleLowerCase()) {
+                //         return recipe;
+                //     }
+               // }
     }
 
     // doRecipe() {

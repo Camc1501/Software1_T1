@@ -1,3 +1,26 @@
-<p>
-  view-recipe works!
-</p>
+<head>
+  <title>Vista de Recetas</title>
+</head>
+<article>
+  <main ng-view>
+    <table>
+      <tbody>
+        <tr>
+          <th>Nombre</th>
+          <td>{{ recipe.nombre }}</td>
+        <tr>
+          <th>Duración</th>
+          <td>{{ recipe.tiempo }}</td>
+        </tr>
+        <tr>
+          <th>Recipientes:</th>
+          <td>{{ recipe.preparacion }}</td>
+        </tr>
+        <tr>
+          <th>Preparación</th>
+          <td>{{ recipe.preparacion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</article>
