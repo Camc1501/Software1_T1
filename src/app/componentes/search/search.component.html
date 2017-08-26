@@ -1,3 +1,15 @@
-<p>
-  search works!
-</p>
+<form>
+    <div class="row">
+		<div class="col-md-9">
+		    <div class="form-group">
+			<label for="InputTitle">Buscar Coincidencias: </label>
+			<input type="text" class="form-control" id="search-input" placeholder="Buscar..." required>
+			<small id="emailHelp" class="form-text text-muted">Agregue los parametros de busqueda</small>
+		    </div>
+		</div>
+		<div class="col-md-4 text-right">
+			    <button type="button" class="btn btn-success" name="search" (click)="search(i)">Buscar</button>
+			</div>
+	</div>
+</form>
+
