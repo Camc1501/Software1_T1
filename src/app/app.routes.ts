@@ -9,7 +9,7 @@ const APP_MODULES: Routes = [
     { path: 'home', component: RecipeListComponent },
     { path: 'search', component: SearchComponent },
     { path: 'add', component: AddRecipeComponent },
-    { path: 'view/:nombre', component: ViewRecipeComponent },
+    { path: 'view/:id', component: ViewRecipeComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

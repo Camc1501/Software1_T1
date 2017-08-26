@@ -1,22 +1,24 @@
-<form>
+<form (ngSubmit)="agregarReceta(forma)" novalidate="" #forma="ngForm">
     <div class="row">
 	<div class="col-md-9">
 	    <div class="form-group">
 		<label for="InputTitle">Nombre Receta:</label>
-		<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agregar Receta" required>
+		<input type="text" class="form-control" id="exampleInputEmail1" name="nombre" ngModel
+		       aria-describedby="emailHelp" placeholder="Agregar Receta" required>
 		<small id="emailHelp" class="form-text text-muted">Agrega el T&iacute;tulo de la receta que vas a agregar.</small>
 	    </div>
 	</div>
 	<div class="col-md-3">
 	    <div class="form-group">
 		<label for="InputTime">Tiempo:</label>
-		<input type="number" class="form-control" id="exampleInputPassword1" placeholder="tiempo en mins" required>
+		<input type="number" class="form-control" id="exampleInputPassword1"
+		       name="tiempo" ngModel placeholder="tiempo en mins" required>
 	    </div>
 	</div>
     </div>
     <div class="form-group">
 	<label for="TextareaRecipe">Preparacion de la receta:</label>
-	<textarea class="form-control" id="exampleTextarea" rows="3" required></textarea>
+	<textarea class="form-control" id="exampleTextarea" rows="3" name="preparacion" ngModel required></textarea>
     </div>
     <label for="InputIngredient">Ingrediente:</label>
     <div class="form-group">
@@ -43,5 +45,5 @@
 	    </div>
 	</div>
     </div>
-    <button type="button" class="btn btn-primary" name="receta" (click)="agregarReceta()">Agregar receta</button>
+    <button type="submit" class="btn btn-primary" name="receta" (click)="agregarReceta()">Agregar receta</button>
 </form>
