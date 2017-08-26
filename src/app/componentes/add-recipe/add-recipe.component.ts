@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Recipe } from '../../interfaces/recipe';
 import { MockupRecipeService } from '../../services/mockup-recipe.service';
@@ -18,14 +19,15 @@ export class AddRecipeComponent implements OnInit {
     ngOnInit() {
     }
 
-    agregarReceta() {
-        this.recipe = {
-            nombre: 'Hamburgesa',
-            tiempo: 10,
-            preparacion: 'Apilar los ingredientes entre dos capas de pan',
-            ingredientes: ['Carne', 'Pan', 'Lechuga']
-        }
-        this._mockup.setRecipe(this.recipe);
+    agregarReceta(forma: NgForm) {
+        console.log(forma);
+        // this.recipe = {
+        //     nombre: forma.nombre,
+        //     tiempo: forma.tiempo,
+        //     preparacion: forma.preparacion,
+        //     ingredientes: ['Carne', 'Pan', 'Lechuga']
+        // }
+        // this._mockup.setRecipe(this.recipe);
     }
 
     agregarIngrediente(ingrediente: string) {

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { ViewRecipeComponent } from './componentes/view-recipe/view-recipe.compo
     ],
     imports: [
         BrowserModule,
+	FormsModule,
         APP_ROUTING
     ],
     providers: [
