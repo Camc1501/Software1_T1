@@ -10,6 +10,7 @@ import { SearchComponent } from './componentes/search/search.component';
 import { MockupRecipeService } from './services/mockup-recipe.service';
 import { AddRecipeComponent } from './componentes/add-recipe/add-recipe.component';
 import { LimitePipe } from './pipes/limite.pipe';
+import { ViewRecipeComponent } from './componentes/view-recipe/view-recipe.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { LimitePipe } from './pipes/limite.pipe';
         NavbarComponent,
         SearchComponent,
         AddRecipeComponent,
-        LimitePipe
+        LimitePipe,
+        ViewRecipeComponent
     ],
     imports: [
         BrowserModule,

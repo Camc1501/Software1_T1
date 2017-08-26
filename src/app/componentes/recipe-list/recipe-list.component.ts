@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Recipe } from '../../interfaces/recipe';
 import { MockupRecipeService } from '../../services/mockup-recipe.service';
@@ -12,7 +13,7 @@ export class RecipeListComponent implements OnInit {
     recipe: Recipe;
     recipes: Recipe[] = [];
 
-    constructor(private _mockup: MockupRecipeService) {
+    constructor(private _mockup: MockupRecipeService, private router: Router) {
         this.recipes = this._mockup.getRecipes();
         if (this.recipes.length < 1) {
             this.recipe = {
@@ -41,5 +42,9 @@ export class RecipeListComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    viewRecipe(i: number) {
+        this.router.navigate(['/view', i]);
     }
 }
