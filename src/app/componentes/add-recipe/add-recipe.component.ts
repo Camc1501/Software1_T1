@@ -21,13 +21,13 @@ export class AddRecipeComponent implements OnInit {
 
     agregarReceta(forma: NgForm) {
         console.log(forma);
-        // this.recipe = {
-        //     nombre: forma.nombre,
-        //     tiempo: forma.tiempo,
-        //     preparacion: forma.preparacion,
-        //     ingredientes: ['Carne', 'Pan', 'Lechuga']
-        // }
-        // this._mockup.setRecipe(this.recipe);
+        this.recipe = {
+            nombre: forma.value.nombre,
+            tiempo: forma.value.tiempo,
+            preparacion: forma.value.preparacion,
+            ingredientes: ['Carne', 'Pan', 'Lechuga']
+        }
+        this._mockup.setRecipe(this.recipe);
     }
 
     agregarIngrediente(ingrediente: string) {
