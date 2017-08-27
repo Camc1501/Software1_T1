@@ -1,39 +1,39 @@
 <div class="alert alert-danger" role="alert" *ngIf="alerta == true">
-    <strong>¡Atención!</strong> Uno o varios campos se encuentran vacios o son invalidos, verifique.
+    <strong>Â¡AtenciÃ³n!</strong> Uno o varios campos se encuentran vacios o son invalidos, verifique.
 </div>
-<form (ngSubmit)="agregarReceta(forma)" #forma="ngForm">
+<form (ngSubmit)="agregarReceta(form)" #form="ngForm">
     <div class="row">
 	<div class="col-md-9">
 	    <div class="form-group">
 		<label for="InputTitle">Nombre Receta:</label>
-		<input type="text" class="form-control" id="exampleInputEmail1" name="nombre"
+		<input type="text" class="form-control" id="exampleInputEmail1" name="name"
 		       aria-describedby="emailHelp" placeholder="Agregar Receta" required />
-		<small id="emailHelp" class="form-text text-muted">Agrega el Título de la receta que vas a agregar.</small>
+		<small id="titleHelp" class="form-text text-muted">Agrega el TÃ­tulo de la receta que vas a agregar.</small>
 	    </div>
 	</div>
 	<div class="col-md-3">
 	    <div class="form-group">
 		<label for="InputTime">Tiempo:</label>
 		<input type="number" class="form-control" id="exampleInputPassword1"
-		       name="tiempo" placeholder="tiempo en mins" required />
+		       name="time" placeholder="tiempo en mins" required />
 	    </div>
 	</div>
     </div>
     <div class="form-group">
-	<label for="TextareaRecipe">Preparación de la receta:</label>
-	<textarea class="form-control" id="exampleTextarea" rows="3" name="preparacion" required ></textarea>
+	<label for="TextareaRecipe">PreparaciÃ³n de la receta:</label>
+	<textarea class="form-control" id="exampleTextarea" rows="3" name="toDo" required ></textarea>
     </div>
     <label for="InputIngredient">Ingrediente:</label>
     <div class="form-group">
 	<div class="row">
 	    <div class="col-md-9">
-		<input type="text" class="form-control" id="ingrediente" placeholder="Nombre del ingrediente"
-		       name="ingrediente" [(ngModel)]="ingrediente">
+		<input type="text" class="form-control" id="ingredient" placeholder="Nombre del ingrediente"
+		       name="ingredient" [(ngModel)]="ingredient">
 	    </div>
 	    
 	    <div class="col-md-3 text-right">
-		<button type="button" class="btn btn-success" name="ingrediente"
-			(click)="agregarIngrediente()">Agregar ingrediente</button>
+		<button type="button" class="btn btn-success" name="ingredient"
+			(click)="addIngredient()">Agregar ingrediente</button>
 	    </div>
 	</div>
     </div>
@@ -41,11 +41,11 @@
 	<div class="row">
 	    <div class="col-md-4">
 		<ul class="list-group">
-		    <li class="list-group-item" *ngFor="let ingrediente of ingredientes;let i = index">
-			<div class="col-md-8">{{ingrediente}}</div>
+		    <li class="list-group-item" *ngFor="let ingredient of ingredients;let i = index">
+			<div class="col-md-8">{{ingredient}}</div>
 			<div class="col-md-4 text-right">
 			    <button type="button" class="btn btn-link btn-sm"
-				    name="delete" (click)="eliminarIngrediente(i)">Eliminar</button>
+				    name="delete" (click)="deleteIngredient(i)">Eliminar</button>
 			</div>
 		    </li>
 		</ul>

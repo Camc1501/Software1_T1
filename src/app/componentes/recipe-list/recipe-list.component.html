@@ -3,7 +3,7 @@
 	<div class="card-header">
 	    <div class="row">
 		<div class="col-md-10">
-		    <h3>No Existen Recetas, ¡Agrega Una!</h3>
+		    <h3>No Existen Recetas, Â¡Agrega Una!</h3>
 		</div>
 		<div class="col-md-2">
 		</div>
@@ -16,16 +16,16 @@
 	<div class="card-header">
 	    <div class="row">
 		<div class="col-md-10">
-		    <h3>{{ recipe.nombre }}</h3>
+		    <h3>{{ recipe.name }}</h3>
 		</div>
 		<div class="col-md-2">
-		    <span class="card-title"><b>Tiempo: </b>{{ recipe.tiempo }} Min</span>
+		    <span class="card-title"><b>Tiempo: </b>{{ recipe.time }} Min</span>
 		</div>
 	    </div>
 	</div>
 	<div class="card-block">
-	    <p class="card-text">{{ recipe.preparacion | limite: 300 }}</p>
-	    <button class="btn btn-primary" (click)="viewRecipe(i)">Ver Preparación</button>
+	    <p class="card-text">{{ recipe.toDo | limit: 300 }}</p>
+	    <button class="btn btn-primary" (click)="viewRecipe(i)">Ver PreparaciÃ³n</button>
 	</div>
     </div>
     <br/>

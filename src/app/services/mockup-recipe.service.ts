@@ -10,7 +10,6 @@ export class MockupRecipeService {
 
     setRecipe(recipe: Recipe) {
         this.recipes.push(recipe);
-        console.log(this.recipes);
     }
 
     getRecipes(): Recipe[] {
@@ -20,11 +19,5 @@ export class MockupRecipeService {
     getRecipe(match: number): Recipe {
         let recipe: Recipe;
         return recipe = this.recipes[match];
-        // match = match.toLocaleLowerCase();
-        // for (let recipe of this.recipes) {
-        //     if (match == recipe.nombre.toLocaleLowerCase()) {
-        //         return recipe;
-        //     }
-        // }
     }
 }
