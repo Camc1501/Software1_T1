@@ -12,7 +12,7 @@ import { MockupRecipeService } from '../../services/mockup-recipe.service';
 export class AddRecipeComponent implements OnInit {
     recipe: Recipe;
     recipes: Recipe[] = [];
-    ingredientes: string[] = [];
+    ingredients: string[] = [];
 
     constructor(private _mockup: MockupRecipeService) { }
 
@@ -22,19 +22,19 @@ export class AddRecipeComponent implements OnInit {
     agregarReceta(forma: NgForm) {
         console.log(forma);
         this.recipe = {
-            nombre: forma.value.nombre,
-            tiempo: forma.value.tiempo,
-            preparacion: forma.value.preparacion,
-            ingredientes: ['Carne', 'Pan', 'Lechuga']
+            name: forma.value.name,
+            time: forma.value.time,
+            toDo: forma.value.toDo,
+            ingredients: ['Carne', 'Pan', 'Lechuga']
         }
         this._mockup.setRecipe(this.recipe);
     }
 
     agregarIngrediente(ingrediente: string) {
-        this.ingredientes.push(ingrediente);
+        this.ingredients.push(ingrediente);
     }
 
     eliminarIngrediente(index: number) {
-        this.ingredientes.splice(index, 1);
+        this.ingredients.splice(index, 1);
     }
 }

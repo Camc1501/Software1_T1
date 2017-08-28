@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   recipe: Recipe;
   recipes: Recipe[] = [];
   recipesSearched: Recipe[] = [];
+  ingredientes: String[] = [];
   
   showRecipe: boolean;
   constructor(private _mockup: MockupRecipeService) {
@@ -26,7 +27,7 @@ export class SearchComponent implements OnInit {
    searchRecipeName(searchName){
       this.recipesSearched=[];
       for (var i = 0; i < this.recipes.length; i++) {
-        if (this.recipes[i].nombre === searchName.value) {
+        if (this.recipes[i].name === searchName.value) {
         this.recipesSearched.push(this.recipes[i]);
         }      
       }
@@ -37,7 +38,7 @@ export class SearchComponent implements OnInit {
      console.log(searchTime.value);
     this.recipesSearched=[];
     for (var i = 0; i < this.recipes.length; i++) {
-      if (this.recipes[i].tiempo === parseInt(searchTime.value)) {
+      if (this.recipes[i].time === parseInt(searchTime.value)) {
       this.recipesSearched.push(this.recipes[i]);
       }      
     }

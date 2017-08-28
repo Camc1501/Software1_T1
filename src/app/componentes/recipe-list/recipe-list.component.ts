@@ -17,24 +17,24 @@ export class RecipeListComponent implements OnInit {
         this.recipes = this._mockup.getRecipes();
         if (this.recipes.length < 1) {
             this.recipe = {
-                nombre: 'Hamburgesa',
-                tiempo: 10,
-                preparacion: 'Apilar los ingredientes entre dos capas de pan',
-                ingredientes: ['Carne', 'Pan', 'Lechuga']
+                name: 'Hamburgesa',
+                time: 10,
+                toDo: 'Apilar los ingredientes entre dos capas de pan',
+                ingredients: ['Carne', 'Pan', 'Lechuga']
             }
             this._mockup.setRecipe(this.recipe);
             this.recipe = {
-                nombre: 'Ensalada',
-                tiempo: 7,
-                preparacion: 'Mezclar los ingredientes, agrege sal al gusto',
-                ingredientes: ['tomate', 'vinagreta', 'Lechuga', 'sal', 'mazorca']
+                name: 'Ensalada',
+                time: 7,
+                toDo: 'Mezclar los ingredientes, agrege sal al gusto',
+                ingredients: ['tomate', 'vinagreta', 'Lechuga', 'sal', 'mazorca']
             }
             this._mockup.setRecipe(this.recipe);
             this.recipe = {
-                nombre: 'Esponjado de Mango',
-                tiempo: 35,
-                preparacion: 'Mezclar los ingredientes, con las claras de los huevos a punto de nieve',
-                ingredientes: ['Mango', 'Leche Condensada', 'Gelatina sin Sabor', 'Huevos', 'limón']
+                name: 'Esponjado de Mango',
+                time: 35,
+                toDo: 'Mezclar los ingredientes, con las claras de los huevos a punto de nieve',
+                ingredients: ['Mango', 'Leche Condensada', 'Gelatina sin Sabor', 'Huevos', 'limon']
             }
             this._mockup.setRecipe(this.recipe);
         }
