@@ -1,27 +1,60 @@
+
 <form>
-    <div class="row">
+	
+		
+	<div class="row">
 		<div class="col-md-9">
 		    <div class="form-group">
 			<label for="InputTitle">Buscar Receta por nombre: </label>
-			<input type="text" class="form-control" id="search-input" placeholder="Buscar receta..." required>
+			<input #recipeName type="text" class="form-control" id="search-input" placeholder="Buscar receta..." required>
 			<small id="emailHelp" class="form-text text-muted">Agregue los parametros de busqueda</small>
 		    </div>
 		</div>
 		<div class="col-md-4 text-right">
-			    <button type="button" class="btn btn-success" name="search" (click)="search(i)">Buscar</button>
+				<button type="button" 
+					class="btn btn-success" 
+					name="search" 
+					(click)="searchRecipeName(recipeName)">
+					Buscar
+			    </button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-9">
 		    <div class="form-group">
-			<label for="InputTitle">Buscar Receta por tiempo de cocción: </label>
-			<input type="text" class="form-control" id="search-input" placeholder="Buscar receta..." required>
+			<label for="InputTitle">Buscar Receta por tiempo de cocci&oacute;n: </label>
+			<input #recipeTime type="text" class="form-control" id="search-input"placeholder="Buscar receta..." required >
 			<small id="emailHelp" class="form-text text-muted">Agregue los parametros de busqueda</small>
 		    </div>
 		</div>
 		<div class="col-md-4 text-right">
-			    <button type="button" class="btn btn-success" name="search" (click)="search(i)">Buscar</button>
+				<button type="button" 
+				class="btn btn-success" 
+				name="search" 
+				(click)="searchRecipeTime(recipeTime)">
+				Buscar
+			</button>
 		</div>
 	</div>
+	
 </form>
+<br>
+<article *ngIf="showRecipe">
+		<div class="card" *ngFor="let recipe of recipesSearched;let i = index">
+		<div class="card-header">
+			<div class="row">
+			<div class="col-md-10">
+				<h3>{{ recipe.nombre }}</h3>
+			</div>
+			<div class="col-md-2">
+				<span class="card-title"><b>Tiempo: </b>{{ recipe.tiempo }} Min</span>
+			</div>
+			</div>
+		</div>
+		<div class="card-block">
+			<p class="card-text">{{ recipe.preparacion }}</p>
+		</div>
+		</div>
+		<br/>
+</article>
 
