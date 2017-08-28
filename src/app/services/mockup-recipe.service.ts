@@ -6,10 +6,14 @@ import { Recipe } from '../interfaces/recipe';
 export class MockupRecipeService {
     recipes: Recipe[] = [];
 
-    constructor() { }
+    constructor() {
+        this.getLocalRecipes();
+    }
 
     setRecipe(recipe: Recipe) {
+        console.log(recipe);
         this.recipes.push(recipe);
+        this.updateLocalRecipes();
     }
 
     getRecipes(): Recipe[] {
@@ -19,5 +23,16 @@ export class MockupRecipeService {
     getRecipe(match: number): Recipe {
         let recipe: Recipe;
         return recipe = this.recipes[match];
+    }
+
+    updateLocalRecipes() {
+        localStorage.setItem('Recipes', JSON.stringify(this.recipes));
+    }
+
+    getLocalRecipes() {
+        console.log(localStorage.getItem('Recipes'));
+        if (localStorage.getItem('Recipes'))
+            this.recipes = JSON.parse(localStorage.getItem('Recipes'));
+        console.log(this.recipes);
     }
 }

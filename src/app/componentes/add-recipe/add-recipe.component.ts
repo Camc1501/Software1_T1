@@ -23,14 +23,16 @@ export class AddRecipeComponent implements OnInit {
     ngOnInit() {
     }
 
-    addRecipe(form: NgForm) {
-        if (form.invalid == false) {
+    addRecipe(formR: NgForm) {
+        if (formR.invalid == false) {
+            console.log('formR', formR.value);
             this.recipe = {
-                name: form.value.name,
-                time: form.value.time,
-                toDo: form.value.toDo,
+                name: formR.value.nameR,
+                time: formR.value.timeR,
+                toDo: formR.value.toDo,
                 ingredients: this.ingredients
             }
+            console.log('recipe', this.recipe);
             this._mockup.setRecipe(this.recipe);
             this.router.navigate(['/home']);
         } else

@@ -1,12 +1,12 @@
 <div class="alert alert-danger" role="alert" *ngIf="alerta == true">
     <strong>¡Atención!</strong> Uno o varios campos se encuentran vacios o son invalidos, verifique.
 </div>
-<form (ngSubmit)="agregarReceta(form)" #form="ngForm">
+<form (ngSubmit)="addRecipe(formR)" #formR="ngForm">
     <div class="row">
 	<div class="col-md-9">
 	    <div class="form-group">
 		<label for="InputTitle">Nombre Receta:</label>
-		<input type="text" class="form-control" id="exampleInputEmail1" name="name"
+		<input type="text" class="form-control" id="exampleInputEmail1" name="nameR" [(ngModel)]="nameR"
 		       aria-describedby="emailHelp" placeholder="Agregar Receta" required />
 		<small id="titleHelp" class="form-text text-muted">Agrega el Título de la receta que vas a agregar.</small>
 	    </div>
@@ -15,13 +15,13 @@
 	    <div class="form-group">
 		<label for="InputTime">Tiempo:</label>
 		<input type="number" class="form-control" id="exampleInputPassword1"
-		       name="time" placeholder="tiempo en mins" required />
+		       name="timeR" [(ngModel)]="timeR" placeholder="tiempo en mins" required />
 	    </div>
 	</div>
     </div>
     <div class="form-group">
 	<label for="TextareaRecipe">Preparación de la receta:</label>
-	<textarea class="form-control" id="exampleTextarea" rows="3" name="toDo" required ></textarea>
+	<textarea class="form-control" id="exampleTextarea" rows="3" name="toDo" [(ngModel)]="toDo" required ></textarea>
     </div>
     <label for="InputIngredient">Ingrediente:</label>
     <div class="form-group">
