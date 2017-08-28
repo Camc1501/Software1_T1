@@ -1,49 +1,56 @@
-<form (ngSubmit)="agregarReceta(forma)" novalidate="" #forma="ngForm">
-    <div class="row">
-	<div class="col-md-9">
-	    <div class="form-group">
-		<label for="InputTitle">Nombre Receta:</label>
-		<input type="text" class="form-control" id="exampleInputEmail1" name="nombre" ngModel
-		       aria-describedby="emailHelp" placeholder="Agregar Receta" required>
-		<small id="emailHelp" class="form-text text-muted">Agrega el T&iacute;tulo de la receta que vas a agregar.</small>
-	    </div>
+<div class="alert alert-danger" role="alert" *ngIf="alerta == true">
+		<strong>¡Atención!</strong> Uno o varios campos se encuentran vacios o son invalidos, verifique.
 	</div>
-	<div class="col-md-3">
-	    <div class="form-group">
-		<label for="InputTime">Tiempo:</label>
-		<input type="number" class="form-control" id="exampleInputPassword1"
-		       name="tiempo" ngModel placeholder="tiempo en mins" required>
-	    </div>
-	</div>
-    </div>
-    <div class="form-group">
-	<label for="TextareaRecipe">Preparacion de la receta:</label>
-	<textarea class="form-control" id="exampleTextarea" rows="3" name="preparacion" ngModel required></textarea>
-    </div>
-    <label for="InputIngredient">Ingrediente:</label>
-    <div class="form-group">
-	<div class="row">
-	    <div class="col-md-9">
-		<input type="text" class="form-control" id="ingrediente" placeholder="Nombre del ingrediente" #ingrediente>
-	    </div>
-	    <div class="col-md-3 text-right">
-		<button type="button" class="btn btn-success" name="ingrediente" (click)="agregarIngrediente(ingrediente.value)">Agregar ingrediente</button>
-	    </div>
-	</div>
-    </div>
-    <div class="form-group">
-	<div class="row">
-	    <div class="col-md-4">
-		<ul class="list-group">
-		    <li class="list-group-item" *ngFor="let ingrediente of ingredientes;let i = index">
-			<div class="col-md-8">{{ingrediente}}</div>
-			<div class="col-md-4 text-right">
-			    <button type="button" class="btn btn-link btn-sm" name="delete" (click)="eliminarIngrediente(i)">Eliminar</button>
+	<form (ngSubmit)="addRecipe(formR)" #formR="ngForm">
+		<div class="row">
+		<div class="col-md-9">
+			<div class="form-group">
+			<label for="InputTitle">Nombre Receta:</label>
+			<input type="text" class="form-control" id="exampleInputEmail1" name="nameR" [(ngModel)]="nameR"
+				   aria-describedby="emailHelp" placeholder="Agregar Receta" required />
+			<small id="titleHelp" class="form-text text-muted">Agrega el Título de la receta que vas a agregar.</small>
 			</div>
-		    </li>
-		</ul>
-	    </div>
-	</div>
-    </div>
-    <button type="submit" class="btn btn-primary" name="receta" (click)="agregarReceta()">Agregar receta</button>
-</form>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+			<label for="InputTime">Tiempo:</label>
+			<input type="number" class="form-control" id="exampleInputPassword1"
+				   name="timeR" [(ngModel)]="timeR" placeholder="tiempo en mins" required />
+			</div>
+		</div>
+		</div>
+		<div class="form-group">
+		<label for="TextareaRecipe">Preparación de la receta:</label>
+		<textarea class="form-control" id="exampleTextarea" rows="3" name="toDo" [(ngModel)]="toDo" required ></textarea>
+		</div>
+		<label for="InputIngredient">Ingrediente:</label>
+		<div class="form-group">
+		<div class="row">
+			<div class="col-md-9">
+			<input type="text" class="form-control" id="ingredient" placeholder="Nombre del ingrediente"
+				   name="ingredient" [(ngModel)]="ingredient">
+			</div>
+			
+			<div class="col-md-3 text-right">
+			<button type="button" class="btn btn-success" name="ingredient"
+				(click)="addIngredient()">Agregar ingrediente</button>
+			</div>
+		</div>
+		</div>
+		<div class="form-group">
+		<div class="row">
+			<div class="col-md-4">
+			<ul class="list-group">
+				<li class="list-group-item" *ngFor="let ingredient of ingredients;let i = index">
+				<div class="col-md-8">{{ingredient}}</div>
+				<div class="col-md-4 text-right">
+					<button type="button" class="btn btn-link btn-sm"
+						name="delete" (click)="deleteIngredient(i)">Eliminar</button>
+				</div>
+				</li>
+			</ul>
+			</div>
+		</div>
+		</div>
+		<input type="submit" class="btn btn-primary" name="receta" value="Agregar receta"/>
+	</form>
