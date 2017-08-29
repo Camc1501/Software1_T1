@@ -1,6 +1,6 @@
 export interface Recipe {
-    nombre: String;
-    preparacion: String;
-    tiempo: Number;
-    ingredientes: String[];
+    name: String;
+    toDo: String;
+    time: Number;
+    ingredients: String[];
 }
