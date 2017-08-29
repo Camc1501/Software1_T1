@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Recipe } from '../../interfaces/recipe';
 import { MockupRecipeService } from '../../services/mockup-recipe.service';
@@ -11,28 +13,38 @@ import { MockupRecipeService } from '../../services/mockup-recipe.service';
 export class AddRecipeComponent implements OnInit {
     recipe: Recipe;
     recipes: Recipe[] = [];
-    ingredientes: string[] = [];
+    ingredients: string[] = [];
+    ingredient: string;
+    alert: boolean = false;
 
-    constructor(private _mockup: MockupRecipeService) { }
+    constructor(private _mockup: MockupRecipeService,
+        private router: Router) { }
 
     ngOnInit() {
     }
 
-    agregarReceta() {
-        this.recipe = {
-            nombre: 'Hamburgesa',
-            tiempo: 10,
-            preparacion: 'Apilar los ingredientes entre dos capas de pan',
-            ingredientes: ['Carne', 'Pan', 'Lechuga']
-        }
-        this._mockup.setRecipe(this.recipe);
+    addRecipe(formR: NgForm) {
+        if (formR.invalid == false) {
+            console.log('formR', formR.value);
+            this.recipe = {
+                name: formR.value.nameR,
+                time: formR.value.timeR,
+                toDo: formR.value.toDo,
+                ingredients: this.ingredients
+            }
+            console.log('recipe', this.recipe);
+            this._mockup.setRecipe(this.recipe);
+            this.router.navigate(['/home']);
+        } else
+            this.alert = true;
     }
 
-    agregarIngrediente(ingrediente: string) {
-        this.ingredientes.push(ingrediente);
+    addIngredient() {
+        this.ingredients.push(this.ingredient);
+        this.ingredient = '';
     }
 
-    eliminarIngrediente(index: number) {
-        this.ingredientes.splice(index, 1);
+    deleteIngrediet(index: number) {
+        this.ingredients.splice(index, 1);
     }
 }

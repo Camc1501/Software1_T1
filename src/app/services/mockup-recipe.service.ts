@@ -7,13 +7,13 @@ export class MockupRecipeService {
     recipes: Recipe[] = [];
 
     constructor() {
-        console.log('recipes service');
-        //        this.doRecipe();
+        this.getLocalRecipes();
     }
 
     setRecipe(recipe: Recipe) {
+        console.log(recipe);
         this.recipes.push(recipe);
-        console.log(this.recipes);
+        this.updateLocalRecipes();
     }
 
     getRecipes(): Recipe[] {
@@ -23,23 +23,16 @@ export class MockupRecipeService {
     getRecipe(match: number): Recipe {
         let recipe: Recipe;
         return recipe = this.recipes[match];
-                // match = match.toLocaleLowerCase();
-                // for (let recipe of this.recipes) {
-                //     if (match == recipe.nombre.toLocaleLowerCase()) {
-                //         return recipe;
-                //     }
-               // }
     }
 
-    // doRecipe() {
-    //     //        let recipe: Recipe;
-    //     this.recipe.nombre = 'Pasta';
-    //     this.recipe.tiempo = 20;
-    //     this.recipe.preparacion = 'Vertir las pastas en Agua hasta ablandar, posteriormente servir y verter la salsa';
-    //     this.recipe.ingredientes.push('Pasta');
-    //     this.recipe.ingredientes.push('Agua');
-    //     this.recipe.ingredientes.push('Salsa Bolognesa');
-    //     console.log(this.recipe);
-    //     //        this.setRecipe(recipe);
-    // }
+    updateLocalRecipes() {
+        localStorage.setItem('Recipes', JSON.stringify(this.recipes));
+    }
+
+    getLocalRecipes() {
+        console.log(localStorage.getItem('Recipes'));
+        if (localStorage.getItem('Recipes'))
+            this.recipes = JSON.parse(localStorage.getItem('Recipes'));
+        console.log(this.recipes);
+    }
 }
