@@ -3,7 +3,7 @@
 </head>
 <article>
   <main ng-view>
-    <table>
+    <table >
       <tbody>
         <tr>
           <th>Nombre</th>
@@ -13,12 +13,12 @@
           <td>{{ recipe.tiempo }}</td>
         </tr>
         <tr>
-          <th>Recipientes:</th>
-          <td>{{ recipe.preparacion }}</td>
+          <th>Ingredientes:</th>
+          <td>{{ recipe.ingredientes }}</td>
         </tr>
         <tr>
           <th>Preparación</th>
-          <td>{{ recipe.preparacion }}</td>
+          <td class="last">{{ recipe.preparacion }}</td>
         </tr>
       </tbody>
     </table>
